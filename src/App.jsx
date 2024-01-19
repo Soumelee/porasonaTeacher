@@ -30,7 +30,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         {/* private routes */}
-        <Route element={<PrivateRoutes />}>
+        <Route>
           <Route path="/" element={<Dashboard />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/schedule" element={<Scheduler />} />
