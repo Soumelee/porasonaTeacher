@@ -9,6 +9,7 @@ import Signup from "./pages/Signup";
 import { useDispatch } from "react-redux";
 import { setUser } from "./redux/Slice";
 import { useEffect } from "react";
+
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -25,6 +26,9 @@ function App() {
   return (
     <>
       <Routes>
+        {/* public routes */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         {/* private routes */}
         <Route element={<PrivateRoutes />}>
           <Route path="/" element={<Dashboard />} />
@@ -32,9 +36,6 @@ function App() {
           <Route path="/schedule" element={<Scheduler />} />
           <Route path="/reviews" element={<Reviews />} />
         </Route>
-        {/* public routes */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
       </Routes>
     </>
   );
