@@ -26,16 +26,16 @@ function App() {
   return (
     <>
       <Routes>
-        {/* public routes */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
         {/* private routes */}
-        <Route>
+        <Route element={<PrivateRoutes />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/schedule" element={<Scheduler />} />
           <Route path="/reviews" element={<Reviews />} />
         </Route>
+        {/* public routes */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </>
   );
